@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<config>
+  <NextOrderId>1055</NextOrderId>
+  <NextDeliveryId>1043</NextDeliveryId>
+  <Clock>9/1/2025 12:00:00 AM</Clock>
+  <ManagerId>123456782</ManagerId>
+  <ManagerPassword>SC+cWpNo4SNMDkU+yVVAVOqKQEt5OAWqQ5qmqqy7JYDV71M/+Ky/awDN/FYIWt8c</ManagerPassword>
+  <AddressCompany>Ben Yehuda 12, Jerusalem, Israel</AddressCompany>
+  <Latitude>31.781488</Latitude>
+  <Longitude>35.2175176</Longitude>
+  <MaxAirDeliveryDistanceKm>50</MaxAirDeliveryDistanceKm>
+  <AverageMotorcycleSpeedKmh>45</AverageMotorcycleSpeedKmh>
+  <AverageBicycleSpeedKmh>10</AverageBicycleSpeedKmh>
+  <AverageCarSpeedKmh>45</AverageCarSpeedKmh>
+  <AverageWalkingSpeedKmh>10</AverageWalkingSpeedKmh>
+  <MaxDeliveryTimeRange>7.00:00:00</MaxDeliveryTimeRange>
+  <RiskTimeRange>2.00:00:00</RiskTimeRange>
+  <InactivityTimeRange>60.00:00:00</InactivityTimeRange>
+  <BaseSalaryMounthly>2500</BaseSalaryMounthly>
+  <DeliveryRatePerKm>5</DeliveryRatePerKm>
+</config>

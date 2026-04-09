@@ -1,0 +1,66 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+	<BaseOutputPath>$(SolutionDir)\bin\</BaseOutputPath>
+	<OutputPath>$(SolutionDir)\bin\</OutputPath>
+	<AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+	<AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
+	<UseCommonOutputDirectory>true</UseCommonOutputDirectory>
+	<ApplicationIcon>Images\LogoForTaskbar.ico</ApplicationIcon>
+
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Images\chilled.png" />
+    <None Remove="Images\dry.png" />
+    <None Remove="Images\FinalSystemLogo.png" />
+    <None Remove="Images\fragile.png" />
+    <None Remove="Images\frozen.png" />
+    <None Remove="Images\Logo video.mp4" />
+    <None Remove="Images\Logo.png" />
+    <None Remove="Images\LogoForTaskbar.ico" />
+    <None Remove="Images\logoSystem.png" />
+    <None Remove="Images\logoVideo.mp4" />
+    <None Remove="Images\mixed.png" />
+    <None Remove="Images\orderType.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Images\Logo video.mp4">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BL\BL.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Images\chilled.png" />
+    <Resource Include="Images\dry.png" />
+    <Resource Include="Images\FinalSystemLogo.png" />
+    <Resource Include="Images\fragile.png" />
+    <Resource Include="Images\frozen.png" />
+    <Resource Include="Images\Logo.png" />
+    <Resource Include="Images\LogoForTaskbar.ico" />
+    <Resource Include="Images\logoSystem.png" />
+    <Resource Include="Images\mixed.png" />
+    <Resource Include="Images\orderType.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Helpers\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="secrets.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>

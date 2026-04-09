@@ -1,0 +1,88 @@
+﻿<Application x:Class="PL.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:PL"
+             xmlns:enums="clr-namespace:PL.Enums"
+             xmlns:converters="clr-namespace:PL.Converters" 
+             xmlns:controls="clr-namespace:System.Windows.Controls;assembly=PresentationFramework"
+             StartupUri="SystemLoginWindow.xaml">
+
+    <Application.Resources>
+        <ResourceDictionary>
+
+            <!-- ===== Global Styles ===== -->
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Styles.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+
+
+                <!-- ===== Enums / Collections ===== -->
+            <enums:DeliveryTypeMethodsCollection x:Key="DeliveryTypeMethodsCollectionKey"/>
+
+            <enums:DeliveryCompletionTypeCollection x:Key="DeliveryCompletionTypesKey"/>
+            
+            <enums:OrderRequirementsCollection x:Key="OrderRequirementsCollectionKey"/>
+            
+            <enums:ClosedDeliveryInListPropertiesCollection x:Key="ClosedDeliveryInListPropertiesCollectionKey"/>
+
+            <enums:OpenOrderInListPropertiesCollection x:Key="OpenOrderInListPropertiesCollectionKey"/>
+
+            <enums:OrderStatusCollection x:Key="OrderStatusCollectionKey"/>
+
+            <enums:ScheduleStatusCollection x:Key="ScheduleStatusCollectionKey"/>
+
+            <enums:OrderInListPropertiesCollection x:Key="OrderInListPropertiesCollectionKey"/>
+
+            <enums:CourierInListPropertiesCollection x:Key="CourierInListPropertiesCollectionKey"/>
+
+            <!-- ===== Converters ===== -->
+            <controls:BooleanToVisibilityConverter x:Key="BoolToVis"/> <!--already exists we don't need to create another one-->
+
+            <converters:ButtonTextToReadOnlyConverter x:Key="ButtonTextToReadOnlyConverterKey"/>
+
+            <converters:BoolIsActiveToStatusStringConverter x:Key="BoolIsActiveToStatusStringConverterKey"/>
+
+            <converters:EditModeAndNotNullToBooleanConverter x:Key="EditModeAndNotNullToBooleanConverterKey"/>
+
+            <converters:InverseBooleanConverter x:Key="InverseBooleanConverterKey"/>
+            
+            <converters:StatusToCancelVisibilityConverter x:Key="StatusToCancelVisibilityConverterKey"/>
+            
+            <converters:SelectionToNullableConverter x:Key="SelectionToNullableConverterKey"/>
+            
+            <converters:IsEditableConverter x:Key="IsEditableConverterKey"/>
+
+            <converters:InverseBooleanToVisibilityConverter x:Key="InverseBoolToVisConverterKey"/>
+            
+            <converters:TimeSpanToStringConverter x:Key="TimeSpanToStringConverterKey"/>
+            
+            <converters:AmountToFreeShippingConverter x:Key="AmountToFreeShippingConverterKey"/>
+
+            <converters:NotNullToBooleanFalseConverter x:Key="NotNullToBooleanFalseConverterKey"/>
+
+            <converters:BooleanToColorConverter x:Key="BooleanToColorConverterKey"/>
+
+            <converters:CourierDeleteAbleToVisibilityConverter x:Key="CourierDeleteAbleToVisibilityConverterKey"/>
+
+            <converters:FilterTextToMessageConverter x:Key="FilterTextToMessageConverterKey"/>
+
+            <converters:DeliveryCompletionToColorConverter x:Key="DeliveryCompletionToColorConverterKey"/>
+
+            <converters:DeliveryCompletionToIconConverter x:Key="DeliveryCompletionToIconConverterKey"/>
+
+            <converters:NullToVisibilityConverter x:Key="NullToVisibilityConverterKey"/>
+
+            <converters:NotNullToVisibilityConverter x:Key="NotNullToVisibilityConverterKey"/>
+
+            <converters:FilterToVisibilityConverter x:Key="FilterToVisibilityConverterKey"/>
+
+            <converters:SimulatorStatusToTextConverter x:Key="SimulatorStatusToTextConverterKey"/>
+
+            <converters:SimulatorStatusToColorConverter x:Key="SimulatorStatusToColorConverterKey"/>
+
+            <converters:CollectionEmptyToVisibilityConverter x:Key="CollectionEmptyToVisibilityConverter"/>
+
+        </ResourceDictionary>
+    </Application.Resources>
+
+</Application>

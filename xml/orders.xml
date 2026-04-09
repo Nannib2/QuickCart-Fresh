@@ -1,0 +1,718 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfOrder xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Order>
+    <Id>1000</Id>
+    <OpenOrderDateTime>2025-08-23T05:12:00</OpenOrderDateTime>
+    <OrderType>Frozen</OrderType>
+    <ShortOrderDescription>Order 1 description</ShortOrderDescription>
+    <OrderAddress>Ben Yehuda 5, Jerusalem, Israel</OrderAddress>
+    <Latitude>31.781800837896395</Latitude>
+    <Longitude>35.21861712052528</Longitude>
+    <CustomerFullName>Liam Johnson</CustomerFullName>
+    <CustomerPhone>0530063404</CustomerPhone>
+    <FreeShippingEligibility>true</FreeShippingEligibility>
+    <AmountItems>37</AmountItems>
+  </Order>
+  <Order>
+    <Id>1001</Id>
+    <OpenOrderDateTime>2025-07-19T01:48:00</OpenOrderDateTime>
+    <OrderType>Chilled</OrderType>
+    <ShortOrderDescription>Order 2 description</ShortOrderDescription>
+    <OrderAddress>Jaffa 4, Jerusalem, Israel</OrderAddress>
+    <Latitude>31.781235478490185</Latitude>
+    <Longitude>35.22122852052534</Longitude>
+    <CustomerFullName>Noah Smith</CustomerFullName>
+    <CustomerPhone>0535956971</CustomerPhone>
+    <FreeShippingEligibility>false</FreeShippingEligibility>
+    <AmountItems>13</AmountItems>
+  </Order>
+  <Order>
+    <Id>1002</Id>
+    <OpenOrderDateTime>2025-08-25T18:42:00</OpenOrderDateTime>
+    <OrderType>Dry</OrderType>
+    <ShortOrderDescription>Order 3 description</ShortOrderDescription>
+    <OrderAddress>King George 6, Jerusalem, Israel</OrderAddress>
+    <Latitude>31.782955115216623</Latitude>
+    <Longitude>35.21748754936087</Longitude>
+    <CustomerFullName>Oliver Brown</CustomerFullName>
+    <CustomerPhone>0542718204</CustomerPhone>
+    <FreeShippingEligibility>true</FreeShippingEligibility>
+    <AmountItems>36</AmountItems>
+  </Order>
+  <Order>
+    <Id>1003</Id>
+    <OpenOrderDateTime>2025-08-17T14:37:00</OpenOrderDateTime>
+    <OrderType>Fragile</OrderType>
+    <ShortOrderDescription>Order 4 description</ShortOrderDescription>
+    <OrderAddress>Hillel 8, Jerusalem, Israel</OrderAddress>
+    <Latitude>31.780458620634448</Latitude>
+    <Longitude>35.216726705182396</Longitude>
+    <CustomerFullName>Elijah Davis</CustomerFullName>
+    <CustomerPhone>0517630524</CustomerPhone>
+    <FreeShippingEligibility>true</FreeShippingEligibility>
+    <AmountItems>40</AmountItems>
+  </Order>
+  <Order>
+    <Id>1004</Id>
+    <OpenOrderDateTime>2025-08-28T16:32:00</OpenOrderDateTime>
+    <OrderType>Mixed</OrderType>
+    <ShortOrderDescription>Order 5 description</ShortOrderDescription>
+    <OrderAddress>Straus 12, Jerusalem, Israel</OrderAddress>
+    <Latitude>31.78510715178902</Latitude>
+    <Longitude>35.21888473216782</Longitude>
+    <CustomerFullName>James Miller</CustomerFullName>
+    <CustomerPhone>0502748047</CustomerPhone>
+    <FreeShippingEligibility>true</FreeShippingEligibility>
+    <AmountItems>37</AmountItems>
+  </Order>
+  <Order>
+    <Id>1005</Id>
+    <OpenOrderDateTime>2025-08-01T01:02:00</OpenOrderDateTime>
+    <OrderType>Frozen</OrderType>
+    <ShortOrderDescription>Order 6 description</ShortOrderDescription>
+    <OrderAddress>Hillel 3, Jerusalem, Israel</OrderAddress>
+    <Latitude>35.216309649360994</Latitude>
+    <Longitude>31.780725899774545</Longitude>
+    <CustomerFullName>William Wilson</CustomerFullName>
+    <CustomerPhone>0516778893</CustomerPhone>
+    <FreeShippingEligibility>true</FreeShippingEligibility>
+    <AmountItems>20</AmountItems>
+  </Order>
+  <Order>
+    <Id>1006</Id>
+    <OpenOrderDateTime>2025-07-03T20:42:00</OpenOrderDateTime>
+    <OrderType>Chilled</OrderType>
+    <ShortOrderDescription>Order 7 description</ShortOrderDescription>
+    <OrderAddress>Shmuel HaNavi 4, Jerusalem, Israel</OrderAddress>
+    <Latitude>31.787266184408217</Latitude>
+    <Longitude>35.22672466285353</Longitude>
+    <CustomerFullName>Benjamin Moore</CustomerFullName>
+    <CustomerPhone>0503958306</CustomerPhone>
+    <FreeShippingEligibility>true</FreeShippingEligibility>
+    <AmountItems>43</AmountItems>
+  </Order>
+  <Order>
+    <Id>1007</Id>
+    <OpenOrderDateTime>2025-08-30T20:00:00</OpenOrderDateTime>
+    <OrderType>Dry</OrderType>
+    <ShortOrderDescription>Order 8 description</ShortOrderDescription>
+    <OrderAddress>Agron 8, Jerusalem, Israel</OrderAddress>
+    <Latitude>31.775723251684028</Latitude>
+    <Longitude>35.21843156285413</Longitude>
+    <CustomerFullName>Lucas Taylor</CustomerFullName>
+    <CustomerPhone>0554957329</CustomerPhone>
+    <FreeShippingEligibility>true</FreeShippingEligibility>
+    <AmountItems>31</AmountItems>
+  </Order>
+  <Order>
+    <Id>1008</Id>
+    <OpenOrderDateTime>2025-08-18T10:22:00</OpenOrderDateTime>
+    <OrderType>Fragile</OrderType>
+    <ShortOrderDescription>Order 9 description</ShortOrderDescription>
+    <OrderAddress>Derech HaRakevet 9, Jerusalem, Israel</OrderAddress>
+    <Latitude>31.762766482638796</Latitude>
+    <Longitude>35.22190634751183</Longitude>
+    <CustomerFullName>Henry Anderson</CustomerFullName>
+    <CustomerPhone>0569242552</CustomerPhone>
+    <FreeShippingEligibility>false</FreeShippingEligibility>
+    <AmountItems>13</AmountItems>
+  </Order>
+  <Order>
+    <Id>1009</Id>
+    <OpenOrderDateTime>2025-07-17T10:39:00</OpenOrderDateTime>
+    <OrderType>Mixed</OrderType>
+    <ShortOrderDescription>Order 10 description</ShortOrderDescription>
+    <OrderAddress>Emek Refaim 10, Jerusalem, Israel</OrderAddress>
+    <Latitude>31.766086478055488</Latitude>
+    <Longitude>35.22197736100453</Longitude>
+    <CustomerFullName>Alexander Thomas</CustomerFullName>
+    <CustomerPhone>0537890451</CustomerPhone>
+    <FreeShippingEligibility>false</FreeShippingEligibility>
+    <AmountItems>4</AmountItems>
+  </Order>
+  <Order>
+    <Id>1010</Id>
+    <OpenOrderDateTime>2025-07-04T19:28:00</OpenOrderDateTime>
+    <OrderType>Frozen</OrderType>
+    <ShortOrderDescription>Order 11 description</ShortOrderDescription>
+    <OrderAddress>Bar-Ilan 16, Jerusalem, Israel</OrderAddress>
+    <Latitude>31.79517208869829</Latitude>
+    <Longitude>35.21808293216735</Longitude>
+    <CustomerFullName>Mason Jackson</CustomerFullName>
+    <CustomerPhone>0554483641</CustomerPhone>
+    <FreeShippingEligibility>true</FreeShippingEligibility>
+    <AmountItems>31</AmountItems>
+  </Order>
+  <Order>
+    <Id>1011</Id>
+    <OpenOrderDateTime>2025-08-08T05:22:00</OpenOrderDateTime>
+    <OrderType>Chilled</OrderType>
+    <ShortOrderDescription>Order 12 description</ShortOrderDescription>
+    <OrderAddress>Paran 9, Jerusalem, Israel</OrderAddress>
+    <Latitude>35.22838561551069</Latitude>
+    <Longitude>31.801593320512783</Longitude>
+    <CustomerFullName>Michael White</CustomerFullName>
+    <CustomerPhone>0569070738</CustomerPhone>
+    <FreeShippingEligibility>true</FreeShippingEligibility>
+    <AmountItems>39</AmountItems>
+  </Order>
+  <Order>
+    <Id>1012</Id>
+    <OpenOrderDateTime>2025-07-23T13:41:00</OpenOrderDateTime>
+    <OrderType>Dry</OrderType>
+    <ShortOrderDescription>Order 13 description</ShortOrderDescription>
+    <OrderAddress>Balfour 5, Jerusalem, Israel</OrderAddress>
+    <Latitude>31.773707509465204</Latitude>
+    <Longitude>35.21695050518262</Longitude>
+    <CustomerFullName>Ethan Harris</CustomerFullName>
+    <CustomerPhone>0538247026</CustomerPhone>
+    <FreeShippingEligibility>true</FreeShippingEligibility>
+    <AmountItems>45</AmountItems>
+  </Order>
+  <Order>
+    <Id>1013</Id>
+    <OpenOrderDateTime>2025-08-23T05:35:00</OpenOrderDateTime>
+    <OrderType>Fragile</OrderType>
+    <ShortOrderDescription>Order 14 description</ShortOrderDescription>
+    <OrderAddress>Ein Kerem 4, Jerusalem, Israel</OrderAddress>
+    <Latitude>31.769111373879248</Latitude>
+    <Longitude>35.16667086285437</Longitude>
+    <CustomerFullName>Daniel Martin</CustomerFullName>
+    <CustomerPhone>0539636355</CustomerPhone>
+    <FreeShippingEligibility>false</FreeShippingEligibility>
+    <AmountItems>15</AmountItems>
+  </Order>
+  <Order>
+    <Id>1014</Id>
+    <OpenOrderDateTime>2025-08-15T17:14:00</OpenOrderDateTime>
+    <OrderType>Mixed</OrderType>
+    <ShortOrderDescription>Order 15 description</ShortOrderDescription>
+    <OrderAddress>Ha-Nevi’im 7, Jerusalem, Israel</OrderAddress>
+    <Latitude>31.78398739301798</Latitude>
+    <Longitude>35.22585227634651</Longitude>
+    <CustomerFullName>Jacob Thompson</CustomerFullName>
+    <CustomerPhone>0545659749</CustomerPhone>
+    <FreeShippingEligibility>false</FreeShippingEligibility>
+    <AmountItems>10</AmountItems>
+  </Order>
+  <Order>
+    <Id>1015</Id>
+    <OpenOrderDateTime>2025-07-13T10:20:00</OpenOrderDateTime>
+    <OrderType>Frozen</OrderType>
+    <ShortOrderDescription>Order 16 description</ShortOrderDescription>
+    <OrderAddress>Herzl 2, Jerusalem, Israel</OrderAddress>
+    <Latitude>31.789028024197105</Latitude>
+    <Longitude>35.20057649168911</Longitude>
+    <CustomerFullName>Logan Garcia</CustomerFullName>
+    <CustomerPhone>0534623736</CustomerPhone>
+    <FreeShippingEligibility>false</FreeShippingEligibility>
+    <AmountItems>9</AmountItems>
+  </Order>
+  <Order>
+    <Id>1016</Id>
+    <OpenOrderDateTime>2025-08-29T23:38:00</OpenOrderDateTime>
+    <OrderType>Chilled</OrderType>
+    <ShortOrderDescription>Order 17 description</ShortOrderDescription>
+    <OrderAddress>Kaplan 4, Jerusalem, Israel</OrderAddress>
+    <Latitude>31.780988457477854</Latitude>
+    <Longitude>35.20072008983942</Longitude>
+    <CustomerFullName>Jackson Martinez</CustomerFullName>
+    <CustomerPhone>0561677892</CustomerPhone>
+    <FreeShippingEligibility>true</FreeShippingEligibility>
+    <AmountItems>48</AmountItems>
+  </Order>
+  <Order>
+    <Id>1017</Id>
+    <OpenOrderDateTime>2025-08-10T23:53:00</OpenOrderDateTime>
+    <OrderType>Dry</OrderType>
+    <ShortOrderDescription>Order 18 description</ShortOrderDescription>
+    <OrderAddress>Keren HaYesod 9, Jerusalem, Israel</OrderAddress>
+    <Latitude>31.77491283266829</Latitude>
+    <Longitude>35.2186494340184</Longitude>
+    <CustomerFullName>Levi Robinson</CustomerFullName>
+    <CustomerPhone>0521786182</CustomerPhone>
+    <FreeShippingEligibility>false</FreeShippingEligibility>
+    <AmountItems>7</AmountItems>
+  </Order>
+  <Order>
+    <Id>1018</Id>
+    <OpenOrderDateTime>2025-08-07T05:04:00</OpenOrderDateTime>
+    <OrderType>Fragile</OrderType>
+    <ShortOrderDescription>Order 19 description</ShortOrderDescription>
+    <OrderAddress>Malkhei Yisrael 8, Jerusalem, Israel</OrderAddress>
+    <Latitude>31.78901584098935</Latitude>
+    <Longitude>35.217689618674726</Longitude>
+    <CustomerFullName>Sebastian Clark</CustomerFullName>
+    <CustomerPhone>0502571307</CustomerPhone>
+    <FreeShippingEligibility>true</FreeShippingEligibility>
+    <AmountItems>22</AmountItems>
+  </Order>
+  <Order>
+    <Id>1019</Id>
+    <OpenOrderDateTime>2025-08-22T11:03:00</OpenOrderDateTime>
+    <OrderType>Mixed</OrderType>
+    <ShortOrderDescription>Order 20 description</ShortOrderDescription>
+    <OrderAddress>Mea Shearim 13, Jerusalem, Israel</OrderAddress>
+    <Latitude>31.788462625201287</Latitude>
+    <Longitude>35.21956599168916</Longitude>
+    <CustomerFullName>Mateo Rodriguez</CustomerFullName>
+    <CustomerPhone>0547566740</CustomerPhone>
+    <FreeShippingEligibility>true</FreeShippingEligibility>
+    <AmountItems>23</AmountItems>
+  </Order>
+  <Order>
+    <Id>1020</Id>
+    <OpenOrderDateTime>2025-08-28T10:06:00</OpenOrderDateTime>
+    <OrderType>Frozen</OrderType>
+    <ShortOrderDescription>Order 21 description</ShortOrderDescription>
+    <OrderAddress>Jaffa 30, Jerusalem, Israel</OrderAddress>
+    <Latitude>35.22184630518237</Latitude>
+    <Longitude>31.780901039937802</Longitude>
+    <CustomerFullName>Jack Lewis</CustomerFullName>
+    <CustomerPhone>0570021060</CustomerPhone>
+    <FreeShippingEligibility>false</FreeShippingEligibility>
+    <AmountItems>6</AmountItems>
+  </Order>
+  <Order>
+    <Id>1021</Id>
+    <OpenOrderDateTime>2025-07-27T11:21:00</OpenOrderDateTime>
+    <OrderType>Chilled</OrderType>
+    <ShortOrderDescription>Order 22 description</ShortOrderDescription>
+    <OrderAddress>Ramban 39, Jerusalem, Israel</OrderAddress>
+    <Latitude>31.774399666577086</Latitude>
+    <Longitude>35.21316710518271</Longitude>
+    <CustomerFullName>Owen Lee</CustomerFullName>
+    <CustomerPhone>0578033871</CustomerPhone>
+    <FreeShippingEligibility>false</FreeShippingEligibility>
+    <AmountItems>8</AmountItems>
+  </Order>
+  <Order>
+    <Id>1022</Id>
+    <OpenOrderDateTime>2025-07-23T10:46:00</OpenOrderDateTime>
+    <OrderType>Dry</OrderType>
+    <ShortOrderDescription>Order 23 description</ShortOrderDescription>
+    <OrderAddress>Ibn Ezra 7, Jerusalem, Israel</OrderAddress>
+    <Latitude>31.776281429698727</Latitude>
+    <Longitude>35.213754378196946</Longitude>
+    <CustomerFullName>Theodore Walker</CustomerFullName>
+    <CustomerPhone>0514817216</CustomerPhone>
+    <FreeShippingEligibility>true</FreeShippingEligibility>
+    <AmountItems>33</AmountItems>
+  </Order>
+  <Order>
+    <Id>1023</Id>
+    <OpenOrderDateTime>2025-08-06T16:50:00</OpenOrderDateTime>
+    <OrderType>Fragile</OrderType>
+    <ShortOrderDescription>Order 24 description</ShortOrderDescription>
+    <OrderAddress>Saadia Gaon 14, Jerusalem, Israel</OrderAddress>
+    <Latitude>31.77398121847861</Latitude>
+    <Longitude>35.21008450333267</Longitude>
+    <CustomerFullName>Aiden Hall</CustomerFullName>
+    <CustomerPhone>0533949216</CustomerPhone>
+    <FreeShippingEligibility>true</FreeShippingEligibility>
+    <AmountItems>28</AmountItems>
+  </Order>
+  <Order>
+    <Id>1024</Id>
+    <OpenOrderDateTime>2025-08-26T07:50:00</OpenOrderDateTime>
+    <OrderType>Mixed</OrderType>
+    <ShortOrderDescription>Order 25 description</ShortOrderDescription>
+    <OrderAddress>Ben-Maimon 5, Jerusalem, Israel</OrderAddress>
+    <Latitude>31.77396913471586</Latitude>
+    <Longitude>35.21569319353994</Longitude>
+    <CustomerFullName>Samuel Allen</CustomerFullName>
+    <CustomerPhone>0545677004</CustomerPhone>
+    <FreeShippingEligibility>true</FreeShippingEligibility>
+    <AmountItems>34</AmountItems>
+  </Order>
+  <Order>
+    <Id>1025</Id>
+    <OpenOrderDateTime>2025-08-25T09:06:00</OpenOrderDateTime>
+    <OrderType>Frozen</OrderType>
+    <ShortOrderDescription>Order 26 description</ShortOrderDescription>
+    <OrderAddress>Alkalai  8, Jerusalem, Israel</OrderAddress>
+    <Latitude>31.77019900026061</Latitude>
+    <Longitude>35.21831429168998</Longitude>
+    <CustomerFullName>Emma Young</CustomerFullName>
+    <CustomerPhone>0544127285</CustomerPhone>
+    <FreeShippingEligibility>true</FreeShippingEligibility>
+    <AmountItems>34</AmountItems>
+  </Order>
+  <Order>
+    <Id>1026</Id>
+    <OpenOrderDateTime>2025-07-19T07:46:00</OpenOrderDateTime>
+    <OrderType>Chilled</OrderType>
+    <ShortOrderDescription>Order 27 description</ShortOrderDescription>
+    <OrderAddress>HaArazim 11, Jerusalem, Israel</OrderAddress>
+    <Latitude>31.779896838631206</Latitude>
+    <Longitude>35.18585396285385</Longitude>
+    <CustomerFullName>Olivia Hernandez</CustomerFullName>
+    <CustomerPhone>0546921344</CustomerPhone>
+    <FreeShippingEligibility>false</FreeShippingEligibility>
+    <AmountItems>18</AmountItems>
+  </Order>
+  <Order>
+    <Id>1027</Id>
+    <OpenOrderDateTime>2025-08-28T03:57:00</OpenOrderDateTime>
+    <OrderType>Dry</OrderType>
+    <ShortOrderDescription>Order 28 description</ShortOrderDescription>
+    <OrderAddress>HaAyal 6, Jerusalem, Israel</OrderAddress>
+    <Latitude>31.753925440674028</Latitude>
+    <Longitude>35.18659254751231</Longitude>
+    <CustomerFullName>Ava King</CustomerFullName>
+    <CustomerPhone>0532932487</CustomerPhone>
+    <FreeShippingEligibility>true</FreeShippingEligibility>
+    <AmountItems>38</AmountItems>
+  </Order>
+  <Order>
+    <Id>1028</Id>
+    <OpenOrderDateTime>2025-07-27T12:09:00</OpenOrderDateTime>
+    <OrderType>Fragile</OrderType>
+    <ShortOrderDescription>Order 29 description</ShortOrderDescription>
+    <OrderAddress>HaGolan 9, Jerusalem, Israel</OrderAddress>
+    <Latitude>31.74439235113998</Latitude>
+    <Longitude>34.992474962855646</Longitude>
+    <CustomerFullName>Isabella Wright</CustomerFullName>
+    <CustomerPhone>0527231174</CustomerPhone>
+    <FreeShippingEligibility>true</FreeShippingEligibility>
+    <AmountItems>41</AmountItems>
+  </Order>
+  <Order>
+    <Id>1029</Id>
+    <OpenOrderDateTime>2025-08-25T08:45:00</OpenOrderDateTime>
+    <OrderType>Mixed</OrderType>
+    <ShortOrderDescription>Order 30 description</ShortOrderDescription>
+    <OrderAddress>HaTzvi 5, Jerusalem, Israel</OrderAddress>
+    <Latitude>31.7897178135403</Latitude>
+    <Longitude>35.20337881214553</Longitude>
+    <CustomerFullName>Sophia Lopez</CustomerFullName>
+    <CustomerPhone>0531397115</CustomerPhone>
+    <FreeShippingEligibility>false</FreeShippingEligibility>
+    <AmountItems>16</AmountItems>
+  </Order>
+  <Order>
+    <Id>1030</Id>
+    <OpenOrderDateTime>2025-07-30T16:05:00</OpenOrderDateTime>
+    <OrderType>Frozen</OrderType>
+    <ShortOrderDescription>Order 31 description</ShortOrderDescription>
+    <OrderAddress>Jaffa 4, Jerusalem, Israel</OrderAddress>
+    <Latitude>31.781262839116977</Latitude>
+    <Longitude>35.221249978196774</Longitude>
+    <CustomerFullName>Charlotte Hill</CustomerFullName>
+    <CustomerPhone>0563713513</CustomerPhone>
+    <FreeShippingEligibility>true</FreeShippingEligibility>
+    <AmountItems>24</AmountItems>
+  </Order>
+  <Order>
+    <Id>1031</Id>
+    <OpenOrderDateTime>2025-08-22T20:49:00</OpenOrderDateTime>
+    <OrderType>Chilled</OrderType>
+    <ShortOrderDescription>Order 32 description</ShortOrderDescription>
+    <OrderAddress>koresh 3, Jerusalem, Israel</OrderAddress>
+    <Latitude>31.779943948183362</Latitude>
+    <Longitude>35.22256186623777</Longitude>
+    <CustomerFullName>Amelia Scott</CustomerFullName>
+    <CustomerPhone>0507794221</CustomerPhone>
+    <FreeShippingEligibility>true</FreeShippingEligibility>
+    <AmountItems>45</AmountItems>
+  </Order>
+  <Order>
+    <Id>1032</Id>
+    <OpenOrderDateTime>2025-07-13T17:30:00</OpenOrderDateTime>
+    <OrderType>Dry</OrderType>
+    <ShortOrderDescription>Order 33 description</ShortOrderDescription>
+    <OrderAddress>HaMesilah 2, Jerusalem, Israel</OrderAddress>
+    <Latitude>31.760042132826857</Latitude>
+    <Longitude>35.21604272052633</Longitude>
+    <CustomerFullName>Mia Green</CustomerFullName>
+    <CustomerPhone>0514791207</CustomerPhone>
+    <FreeShippingEligibility>true</FreeShippingEligibility>
+    <AmountItems>41</AmountItems>
+  </Order>
+  <Order>
+    <Id>1033</Id>
+    <OpenOrderDateTime>2025-08-15T05:36:00</OpenOrderDateTime>
+    <OrderType>Fragile</OrderType>
+    <ShortOrderDescription>Order 34 description</ShortOrderDescription>
+    <OrderAddress>HaOr 8, Jerusalem, Israel</OrderAddress>
+    <Latitude>31.790468644382667</Latitude>
+    <Longitude>35.20416366285336</Longitude>
+    <CustomerFullName>Harper Adams</CustomerFullName>
+    <CustomerPhone>0578038445</CustomerPhone>
+    <FreeShippingEligibility>true</FreeShippingEligibility>
+    <AmountItems>46</AmountItems>
+  </Order>
+  <Order>
+    <Id>1034</Id>
+    <OpenOrderDateTime>2025-08-12T14:25:00</OpenOrderDateTime>
+    <OrderType>Mixed</OrderType>
+    <ShortOrderDescription>Order 35 description</ShortOrderDescription>
+    <OrderAddress>HaGalgal 4, Jerusalem, Israel</OrderAddress>
+    <Latitude>31.74877394879823</Latitude>
+    <Longitude>35.20784773401963</Longitude>
+    <CustomerFullName>Evelyn Baker</CustomerFullName>
+    <CustomerPhone>0567401728</CustomerPhone>
+    <FreeShippingEligibility>true</FreeShippingEligibility>
+    <AmountItems>23</AmountItems>
+  </Order>
+  <Order>
+    <Id>1035</Id>
+    <OpenOrderDateTime>2025-07-26T05:01:00</OpenOrderDateTime>
+    <OrderType>Frozen</OrderType>
+    <ShortOrderDescription>Order 36 description</ShortOrderDescription>
+    <OrderAddress>HaBanay 5, Jerusalem, Israel</OrderAddress>
+    <Latitude>31.775529548166375</Latitude>
+    <Longitude>35.189918405182645</Longitude>
+    <CustomerFullName>Abigail Nelson</CustomerFullName>
+    <CustomerPhone>0559934357</CustomerPhone>
+    <FreeShippingEligibility>false</FreeShippingEligibility>
+    <AmountItems>10</AmountItems>
+  </Order>
+  <Order>
+    <Id>1036</Id>
+    <OpenOrderDateTime>2025-07-07T05:14:00</OpenOrderDateTime>
+    <OrderType>Chilled</OrderType>
+    <ShortOrderDescription>Order 37 description</ShortOrderDescription>
+    <OrderAddress>HaDekel 6, Jerusalem, Israel</OrderAddress>
+    <Latitude>31.785737228965072</Latitude>
+    <Longitude>35.211018307032134</Longitude>
+    <CustomerFullName>Ella Carter</CustomerFullName>
+    <CustomerPhone>0514012010</CustomerPhone>
+    <FreeShippingEligibility>false</FreeShippingEligibility>
+    <AmountItems>6</AmountItems>
+  </Order>
+  <Order>
+    <Id>1037</Id>
+    <OpenOrderDateTime>2025-08-08T11:15:00</OpenOrderDateTime>
+    <OrderType>Dry</OrderType>
+    <ShortOrderDescription>Order 38 description</ShortOrderDescription>
+    <OrderAddress>Golda Meir 5, Jerusalem, Israel</OrderAddress>
+    <Latitude>35.218041423292526</Latitude>
+    <Longitude>31.79797840809855</Longitude>
+    <CustomerFullName>Scarlett Mitchell</CustomerFullName>
+    <CustomerPhone>0548918282</CustomerPhone>
+    <FreeShippingEligibility>false</FreeShippingEligibility>
+    <AmountItems>16</AmountItems>
+  </Order>
+  <Order>
+    <Id>1038</Id>
+    <OpenOrderDateTime>2025-07-26T09:27:00</OpenOrderDateTime>
+    <OrderType>Fragile</OrderType>
+    <ShortOrderDescription>Order 39 description</ShortOrderDescription>
+    <OrderAddress>HaErez 8, Jerusalem, Israel</OrderAddress>
+    <Latitude>31.78291063449324</Latitude>
+    <Longitude>35.21264672052514</Longitude>
+    <CustomerFullName>Grace Perez</CustomerFullName>
+    <CustomerPhone>0510455814</CustomerPhone>
+    <FreeShippingEligibility>false</FreeShippingEligibility>
+    <AmountItems>16</AmountItems>
+  </Order>
+  <Order>
+    <Id>1039</Id>
+    <OpenOrderDateTime>2025-07-06T19:53:00</OpenOrderDateTime>
+    <OrderType>Mixed</OrderType>
+    <ShortOrderDescription>Order 40 description</ShortOrderDescription>
+    <OrderAddress>Gaza 9, Jerusalem, Israel</OrderAddress>
+    <Latitude>31.780294239706752</Latitude>
+    <Longitude>35.2178969358682</Longitude>
+    <CustomerFullName>Chloe Roberts</CustomerFullName>
+    <CustomerPhone>0572454732</CustomerPhone>
+    <FreeShippingEligibility>true</FreeShippingEligibility>
+    <AmountItems>27</AmountItems>
+  </Order>
+  <Order>
+    <Id>1040</Id>
+    <OpenOrderDateTime>2025-08-22T19:05:00</OpenOrderDateTime>
+    <OrderType>Frozen</OrderType>
+    <ShortOrderDescription>Order 41 description</ShortOrderDescription>
+    <OrderAddress>HaAliya 10, Jerusalem, Israel</OrderAddress>
+    <Latitude>31.78411585286362</Latitude>
+    <Longitude>35.203637620525114</Longitude>
+    <CustomerFullName>Luna Turner</CustomerFullName>
+    <CustomerPhone>0566533546</CustomerPhone>
+    <FreeShippingEligibility>true</FreeShippingEligibility>
+    <AmountItems>34</AmountItems>
+  </Order>
+  <Order>
+    <Id>1041</Id>
+    <OpenOrderDateTime>2025-07-17T21:08:00</OpenOrderDateTime>
+    <OrderType>Chilled</OrderType>
+    <ShortOrderDescription>Order 42 description</ShortOrderDescription>
+    <OrderAddress>HaTkufa 11, Jerusalem, Israel</OrderAddress>
+    <Latitude>31.760805152257035</Latitude>
+    <Longitude>35.20174677634759</Longitude>
+    <CustomerFullName>Layla Phillips</CustomerFullName>
+    <CustomerPhone>0568354220</CustomerPhone>
+    <FreeShippingEligibility>true</FreeShippingEligibility>
+    <AmountItems>23</AmountItems>
+  </Order>
+  <Order>
+    <Id>1042</Id>
+    <OpenOrderDateTime>2025-08-10T07:11:00</OpenOrderDateTime>
+    <OrderType>Dry</OrderType>
+    <ShortOrderDescription>Order 43 description</ShortOrderDescription>
+    <OrderAddress>king George 12, Jerusalem, Israel</OrderAddress>
+    <Latitude>31.782885215647934</Latitude>
+    <Longitude>35.21708900802311</Longitude>
+    <CustomerFullName>Zoe Campbell</CustomerFullName>
+    <CustomerPhone>0578175870</CustomerPhone>
+    <FreeShippingEligibility>false</FreeShippingEligibility>
+    <AmountItems>9</AmountItems>
+  </Order>
+  <Order>
+    <Id>1043</Id>
+    <OpenOrderDateTime>2025-07-27T09:43:00</OpenOrderDateTime>
+    <OrderType>Fragile</OrderType>
+    <ShortOrderDescription>Order 44 description</ShortOrderDescription>
+    <OrderAddress>Hachlutz 13, Jerusalem, Israel</OrderAddress>
+    <Latitude>31.781200078559998</Latitude>
+    <Longitude>35.19282801867513</Longitude>
+    <CustomerFullName>Aria Parker</CustomerFullName>
+    <CustomerPhone>0518680113</CustomerPhone>
+    <FreeShippingEligibility>true</FreeShippingEligibility>
+    <AmountItems>36</AmountItems>
+  </Order>
+  <Order>
+    <Id>1044</Id>
+    <OpenOrderDateTime>2025-07-20T11:56:00</OpenOrderDateTime>
+    <OrderType>Mixed</OrderType>
+    <ShortOrderDescription>Order 45 description</ShortOrderDescription>
+    <OrderAddress>HaHarash 6, Jerusalem, Israel</OrderAddress>
+    <Latitude>31.785965129636693</Latitude>
+    <Longitude>35.222095062853526</Longitude>
+    <CustomerFullName>Ellie Evans</CustomerFullName>
+    <CustomerPhone>0532484257</CustomerPhone>
+    <FreeShippingEligibility>false</FreeShippingEligibility>
+    <AmountItems>9</AmountItems>
+  </Order>
+  <Order>
+    <Id>1045</Id>
+    <OpenOrderDateTime>2025-08-02T09:49:00</OpenOrderDateTime>
+    <OrderType>Frozen</OrderType>
+    <ShortOrderDescription>Order 46 description</ShortOrderDescription>
+    <OrderAddress>Gaza 6, Jerusalem, Israel</OrderAddress>
+    <Latitude>31.774207776046058</Latitude>
+    <Longitude>35.21643273216838</Longitude>
+    <CustomerFullName>Nora Edwards</CustomerFullName>
+    <CustomerPhone>0557753610</CustomerPhone>
+    <FreeShippingEligibility>false</FreeShippingEligibility>
+    <AmountItems>14</AmountItems>
+  </Order>
+  <Order>
+    <Id>1046</Id>
+    <OpenOrderDateTime>2025-08-09T04:09:00</OpenOrderDateTime>
+    <OrderType>Chilled</OrderType>
+    <ShortOrderDescription>Order 47 description</ShortOrderDescription>
+    <OrderAddress>David Remez 7, Jerusalem, Israel</OrderAddress>
+    <Latitude>31.768265725581003</Latitude>
+    <Longitude>35.224437832168626</Longitude>
+    <CustomerFullName>Lily Collins</CustomerFullName>
+    <CustomerPhone>0514903068</CustomerPhone>
+    <FreeShippingEligibility>true</FreeShippingEligibility>
+    <AmountItems>43</AmountItems>
+  </Order>
+  <Order>
+    <Id>1047</Id>
+    <OpenOrderDateTime>2025-08-03T09:49:00</OpenOrderDateTime>
+    <OrderType>Dry</OrderType>
+    <ShortOrderDescription>Order 48 description</ShortOrderDescription>
+    <OrderAddress>Rachel Imenu 8, Jerusalem, Israel</OrderAddress>
+    <Latitude>31.76359111329198</Latitude>
+    <Longitude>35.217944434018946</Longitude>
+    <CustomerFullName>Hazel Stewart</CustomerFullName>
+    <CustomerPhone>0563158202</CustomerPhone>
+    <FreeShippingEligibility>true</FreeShippingEligibility>
+    <AmountItems>49</AmountItems>
+  </Order>
+  <Order>
+    <Id>1048</Id>
+    <OpenOrderDateTime>2025-07-27T04:34:00</OpenOrderDateTime>
+    <OrderType>Fragile</OrderType>
+    <ShortOrderDescription>Order 49 description</ShortOrderDescription>
+    <OrderAddress>Pierre Koenig 10, Jerusalem, Israel</OrderAddress>
+    <Latitude>31.756900535981494</Latitude>
+    <Longitude>35.21444977634792</Longitude>
+    <CustomerFullName>Violet Sanchez</CustomerFullName>
+    <CustomerPhone>0564735226</CustomerPhone>
+    <FreeShippingEligibility>false</FreeShippingEligibility>
+    <AmountItems>13</AmountItems>
+  </Order>
+  <Order>
+    <Id>1049</Id>
+    <OpenOrderDateTime>2025-07-06T18:12:00</OpenOrderDateTime>
+    <OrderType>Mixed</OrderType>
+    <ShortOrderDescription>Order 50 description</ShortOrderDescription>
+    <OrderAddress>Yirmiyahu 7, Jerusalem, Israel</OrderAddress>
+    <Latitude>31.792072299633066</Latitude>
+    <Longitude>35.210424989838856</Longitude>
+    <CustomerFullName>Aurora Rivera</CustomerFullName>
+    <CustomerPhone>0518928506</CustomerPhone>
+    <FreeShippingEligibility>false</FreeShippingEligibility>
+    <AmountItems>9</AmountItems>
+  </Order>
+  <Order>
+    <Id>1050</Id>
+    <OpenOrderDateTime>2025-08-13T03:25:00</OpenOrderDateTime>
+    <OrderType>Frozen</OrderType>
+    <ShortOrderDescription>Order 51 description</ShortOrderDescription>
+    <OrderAddress>Ben Yehuda 5, Jerusalem, Israel</OrderAddress>
+    <Latitude>31.781800837896395</Latitude>
+    <Longitude>35.21861712052528</Longitude>
+    <CustomerFullName>Liam Johnson</CustomerFullName>
+    <CustomerPhone>0508670920</CustomerPhone>
+    <FreeShippingEligibility>true</FreeShippingEligibility>
+    <AmountItems>25</AmountItems>
+  </Order>
+  <Order>
+    <Id>1051</Id>
+    <OpenOrderDateTime>2025-08-24T07:07:00</OpenOrderDateTime>
+    <OrderType>Chilled</OrderType>
+    <ShortOrderDescription>Order 52 description</ShortOrderDescription>
+    <OrderAddress>Jaffa 4, Jerusalem, Israel</OrderAddress>
+    <Latitude>31.781235478490185</Latitude>
+    <Longitude>35.22122852052534</Longitude>
+    <CustomerFullName>Noah Smith</CustomerFullName>
+    <CustomerPhone>0551068380</CustomerPhone>
+    <FreeShippingEligibility>true</FreeShippingEligibility>
+    <AmountItems>34</AmountItems>
+  </Order>
+  <Order>
+    <Id>1052</Id>
+    <OpenOrderDateTime>2025-08-04T00:23:00</OpenOrderDateTime>
+    <OrderType>Dry</OrderType>
+    <ShortOrderDescription>Order 53 description</ShortOrderDescription>
+    <OrderAddress>King George 6, Jerusalem, Israel</OrderAddress>
+    <Latitude>31.782955115216623</Latitude>
+    <Longitude>35.21748754936087</Longitude>
+    <CustomerFullName>Oliver Brown</CustomerFullName>
+    <CustomerPhone>0525409005</CustomerPhone>
+    <FreeShippingEligibility>true</FreeShippingEligibility>
+    <AmountItems>42</AmountItems>
+  </Order>
+  <Order>
+    <Id>1053</Id>
+    <OpenOrderDateTime>2025-08-28T22:30:00</OpenOrderDateTime>
+    <OrderType>Fragile</OrderType>
+    <ShortOrderDescription>Order 54 description</ShortOrderDescription>
+    <OrderAddress>Hillel 8, Jerusalem, Israel</OrderAddress>
+    <Latitude>31.780458620634448</Latitude>
+    <Longitude>35.216726705182396</Longitude>
+    <CustomerFullName>Elijah Davis</CustomerFullName>
+    <CustomerPhone>0500781251</CustomerPhone>
+    <FreeShippingEligibility>false</FreeShippingEligibility>
+    <AmountItems>8</AmountItems>
+  </Order>
+  <Order>
+    <Id>1054</Id>
+    <OpenOrderDateTime>2025-08-28T01:36:00</OpenOrderDateTime>
+    <OrderType>Mixed</OrderType>
+    <ShortOrderDescription>Order 55 description</ShortOrderDescription>
+    <OrderAddress>Straus 12, Jerusalem, Israel</OrderAddress>
+    <Latitude>31.78510715178902</Latitude>
+    <Longitude>35.21888473216782</Longitude>
+    <CustomerFullName>James Miller</CustomerFullName>
+    <CustomerPhone>0522438338</CustomerPhone>
+    <FreeShippingEligibility>false</FreeShippingEligibility>
+    <AmountItems>1</AmountItems>
+  </Order>
+</ArrayOfOrder>

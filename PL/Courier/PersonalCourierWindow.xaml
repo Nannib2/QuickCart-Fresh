@@ -1,0 +1,282 @@
+﻿<Window x:Class="PL.Courier.PersonalCourierWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PL.Courier"
+        xmlns:converters="clr-namespace:PL.Converters"
+         xmlns:SmartInputValidator="clr-namespace:PL"
+        Loaded="PersonalCourierWindow_Loaded"
+        Closed="PersonalCourierWindow_Closed" 
+        WindowState="Maximized"
+        mc:Ignorable="d"
+        Title="Courier Details" Height="850" Width="1250">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="80"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Border Grid.Row="0" Style="{StaticResource HeaderBorderStyle}">
+            <Grid>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center">
+                    <Grid Width="50" Height="50">
+                        <Ellipse Fill="{Binding CurrentCourier.IsActive, Converter={StaticResource BooleanToColorConverterKey}}"/>
+                        <TextBlock Text="👤" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24"/>
+                    </Grid>
+                    <StackPanel VerticalAlignment="Center" Margin="15,0,0,0">
+                        <TextBlock Text="{Binding CurrentCourier.NameCourier}" FontWeight="Bold" FontSize="22" Foreground="#1B5E20" Margin="0,5,0,0"/>
+                        <TextBlock Text="{Binding CurrentCourier.IsActive, Converter={StaticResource BoolIsActiveToStatusStringConverterKey}}" FontSize="12" Foreground="#666666"/>
+                    </StackPanel>
+                </StackPanel>
+
+                <TextBlock Text="⚠️ Cannot change Delivery Type while an order is active"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Center"
+                   Foreground="#D32F2F"
+                   FontWeight="SemiBold"
+                   FontSize="14"
+                   Visibility="{Binding CurrentOrderForCourier, Converter={StaticResource NotNullToVisibilityConverterKey}}"/>
+
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center">
+                    <TextBlock Text="QuickCart Fresh" VerticalAlignment="Center" FontSize="20" FontWeight="ExtraBold" Foreground="#1B5E20" Margin="0,0,15,0"/>
+                    <Image Source="/Images/logoSystem.png" Height="55" RenderOptions.BitmapScalingMode="HighQuality"/>
+                </StackPanel>
+            </Grid>
+        </Border>
+
+        <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
+            <Grid Margin="25">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+
+                <Border Grid.Column="0" Style="{StaticResource CardBorderStyle}" VerticalAlignment="Top">
+                    <StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="📋 Profile Details" FontSize="22" FontWeight="Bold" Foreground="#1B5E20" Margin="0,0,0,20"/>
+                        </StackPanel>
+                        <UniformGrid Columns="2" VerticalAlignment="Top">
+                            <StackPanel Margin="10,8">
+                                <Label Content="🆔 Courier ID:" FontWeight="SemiBold" Foreground="#555"/>
+                                <TextBox Text="{Binding CurrentCourier.Id}" IsReadOnly="True" Background="#F0F0F0" Padding="8" BorderThickness="1"/>
+                            </StackPanel>
+
+                            <StackPanel Margin="10,8">
+                                <Label Content="👤 Full Name:" FontWeight="SemiBold" Foreground="#555"/>
+                                <TextBox Text="{Binding CurrentCourier.NameCourier}" IsReadOnly="{Binding IsReadMode}" Padding="8" BorderThickness="1"/>
+                            </StackPanel>
+
+                            <StackPanel Margin="10,8">
+                                <Label Content="📞 Phone Number:" FontWeight="SemiBold" Foreground="#555"/>
+                                <TextBox  IsReadOnly="{Binding IsReadMode}" Padding="8" BorderThickness="1">
+                                    <TextBox.Text>
+                                        <Binding Path="CurrentCourier.PhoneNumber" 
+                                            UpdateSourceTrigger="PropertyChanged">
+                                            <Binding.ValidationRules>
+                                                <SmartInputValidator:SmartInputValidator Type="Integer"/>
+                                            </Binding.ValidationRules>
+                                        </Binding>
+                                    </TextBox.Text>
+                                </TextBox>
+                            </StackPanel>
+
+                            <StackPanel Margin="10,8">
+                                <Label Content="📧 Email Address:" FontWeight="SemiBold" Foreground="#555"/>
+                                <TextBox IsReadOnly="{Binding IsReadMode}" Padding="8" BorderThickness="1">
+                                    <TextBox.Text>
+                                        <Binding Path="CurrentCourier.EmailCourier" 
+                                            UpdateSourceTrigger="PropertyChanged">
+                                            <Binding.ValidationRules>
+                                                <SmartInputValidator:SmartInputValidator Type="Email"/>
+                                            </Binding.ValidationRules>
+                                        </Binding>
+                                    </TextBox.Text>
+                                </TextBox>
+                            </StackPanel>
+
+                            <StackPanel Margin="10,8">
+                                <Label Content="🔑 Account Password:" FontWeight="SemiBold" Foreground="#555"/>
+                                <PasswordBox IsEnabled="{Binding IsReadMode, Converter={StaticResource InverseBooleanConverterKey}}" Height="38"
+                                             converters:PasswordBoxHelper.Attach="True"
+                                             converters:PasswordBoxHelper.BoundPassword="{Binding CurrentCourier.PasswordCourier, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                            </StackPanel>
+
+                            <StackPanel Margin="10,8">
+                                <Label Content="🚲 Delivery Type:" FontWeight="SemiBold" Foreground="#555"/>
+                                <ComboBox ItemsSource="{Binding DeliveryTypes}" SelectedItem="{Binding CurrentCourier.DeliveryType, Mode=TwoWay}" Height="38">
+                                    <ComboBox.IsEnabled>
+                                        <MultiBinding Converter="{StaticResource EditModeAndNotNullToBooleanConverterKey}">
+                                            <Binding Path="IsReadMode" />
+                                            <Binding Path="CurrentOrderForCourier" />
+                                        </MultiBinding>
+                                    </ComboBox.IsEnabled>
+                                </ComboBox>
+                            </StackPanel>
+
+                            <StackPanel Margin="10,8">
+                                <Label Content="📏 Max Distance (km):" FontWeight="SemiBold" Foreground="#555"/>
+                                <TextBox Text="{Binding CurrentCourier.PersonalMaxAirDistance}" IsReadOnly="{Binding IsReadMode}" Padding="8" BorderThickness="1"/>
+                            </StackPanel>
+
+                            <StackPanel Margin="10,8">
+                                <Label Content="📅 Work Start Date:" FontWeight="SemiBold" Foreground="#555"/>
+                                <DatePicker SelectedDate="{Binding CurrentCourier.StartDate}" IsEnabled="False" Height="38"/>
+                            </StackPanel>
+
+                            <StackPanel Margin="10,8">
+                                <Label Content="✅ On-Time Deliveries:" FontWeight="Bold" Foreground="#2E7D32"/>
+                                <TextBox Text="{Binding CurrentCourier.TotalDeliveredOnTime}" IsReadOnly="True" Background="#E8F5E9" Padding="8" FontWeight="Bold"/>
+                            </StackPanel>
+
+                            <StackPanel Margin="10,8">
+                                <Label Content="⚠️ Late Deliveries:" FontWeight="Bold" Foreground="#C62828"/>
+                                <TextBox Text="{Binding CurrentCourier.TotalLateDeliveries}" IsReadOnly="True" Background="#FFEBEE" Padding="8" FontWeight="Bold"/>
+                            </StackPanel>
+                        </UniformGrid>
+
+                        <Separator Margin="10,25" Background="#E0E0E0"/>
+
+                        <DockPanel LastChildFill="False" Margin="10,0">
+                            <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                                <Button Content="💰 View Salary Details" Click="btnShowSalary_Click" IsEnabled="{Binding IsReadMode}"
+                                        Style="{StaticResource PrimaryButtonStyle}"  
+                                        Padding="15,8" FontSize="13"/>
+                            </StackPanel>
+
+                            <StackPanel Orientation="Horizontal" DockPanel.Dock="Right">
+                                <Grid>
+                                    <Button Content="📝 Edit values" Style="{StaticResource SecondaryButtonStyle}" Margin="5,5,5,5"  Visibility="{Binding IsReadMode, Converter={StaticResource BoolToVis}}" Click="btnEdit_Click"/>
+                                    <StackPanel Orientation="Horizontal" Margin="5,5,5,5">
+                                        <Button Content="💾 Save" Style="{StaticResource SuccessButtonStyle}" Margin="5,5,5,5" Click="btnSave_Click" Visibility="{Binding IsReadMode, Converter={StaticResource InverseBoolToVisConverterKey}}" />
+                                        <Button Content="❌ Cancel" Style="{StaticResource DangerButtonStyle}" Margin="5,5,5,5"  Click="btnCancel_Click" Visibility="{Binding IsReadMode, Converter={StaticResource InverseBoolToVisConverterKey}}" />
+                                    </StackPanel>
+                                </Grid>
+                            </StackPanel>
+                        </DockPanel>
+                    </StackPanel>
+                </Border>
+
+                <!--order Deatails Panel-->
+                <StackPanel Grid.Column="1">
+
+                    <Border Style="{StaticResource CardBorderStyle}" Background="#FEFEFA" BorderBrush="#B3E5FC" BorderThickness="2">
+                         <Grid>
+                            <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto" MaxHeight="600">
+                            <StackPanel>
+                                    <TextBlock Text="🚚 Active Order" FontSize="18" FontWeight="Bold" Foreground="#90CAF9" Margin="0,0,0,15" HorizontalAlignment="Center"/>
+
+                                <StackPanel Visibility="{Binding CurrentOrderForCourier, Converter={StaticResource NullToVisibilityConverterKey}}" >
+                                    <TextBlock Text="📭" FontSize="60" HorizontalAlignment="Center"/>
+                                    <TextBlock Text="No delivery in progress." FontSize="14" FontStyle="Italic" HorizontalAlignment="Center" Foreground="#999"/>
+                                    <Button Content="🔍 Find New Order" Style="{StaticResource PrimaryButtonStyle}" Margin="0,15" 
+                                        IsEnabled="{Binding CurrentCourier.IsActive}" Click="btnPickOrder_Click" HorizontalAlignment="Center" Width="150"/>
+                                </StackPanel>
+
+                                <StackPanel Visibility="{Binding CurrentOrderForCourier, Converter={StaticResource NotNullToVisibilityConverterKey}}">
+                                    <Border Background="#F9F9F9" Padding="10" CornerRadius="8" Margin="0,5">
+                                        <DockPanel>
+                                            <TextBlock Text="🔢 Order ID:" FontWeight="Bold" Foreground="Gray" FontSize="11"/>
+                                            <TextBlock Text="{Binding CurrentOrderForCourier.OrderId}" FontWeight="Bold" Margin="5,0"/>
+                                                <TextBlock Text="{Binding CurrentOrderForCourier.OrderStatus}" Foreground="#FFB74D" HorizontalAlignment="Right" FontWeight="SemiBold"/>
+                                        </DockPanel>
+                                    </Border>
+
+                                    <StackPanel Margin="0,5">
+                                        <Label Content="👤 Customer Name:" FontSize="11" Foreground="Gray"/>
+                                        <TextBlock Text="{Binding CurrentOrderForCourier.CustomerName}" FontSize="14" FontWeight="SemiBold" Margin="8,0"/>
+                                    </StackPanel>
+
+                                    <StackPanel Margin="0,5">
+                                        <Label Content="📍 Delivery Address:" FontSize="11" Foreground="Gray"/>
+                                        <TextBlock Text="{Binding CurrentOrderForCourier.OrderAddress}" TextWrapping="Wrap" Margin="8,0" Foreground="#333"/>
+                                    </StackPanel>
+
+                                    <UniformGrid Columns="2" Margin="0,5">
+                                        <StackPanel>
+                                            <Label Content="🕒 Started:" FontSize="11" Foreground="Gray"/>
+                                                <TextBlock Text="{Binding CurrentOrderForCourier.DeliveryStartTime, StringFormat={}{0:dd/MM/yyyy HH:mm}}" Margin="8,0"/>
+                                            </StackPanel>
+                                        <StackPanel>
+                                            <Label Content="🚨 Deadline:" FontSize="11" Foreground="Gray"/>
+                                                <TextBlock Text="{Binding CurrentOrderForCourier.MaxDeliveryTime, StringFormat={}{0:dd/MM/yyyy HH:mm}}" Foreground="DarkRed" FontWeight="Bold" Margin="8,0"/>
+                                        </StackPanel>
+                                    </UniformGrid>
+
+                                    <Border Background="#FFF4E5" CornerRadius="10" Margin="0,10" Padding="12">
+                                        <StackPanel HorizontalAlignment="Center">
+                                            <TextBlock Text="⏳ Time Remaining" FontSize="11" HorizontalAlignment="Center" Foreground="#E65100"/>
+                                                <TextBlock Text="{Binding CurrentOrderForCourier.RemainingTime, StringFormat='{}{0:%d} days {0:%h} hours {0:%m} min'}" Margin="8,0"
+                                                FontSize="22" FontWeight="Bold" Foreground="#E65100"/>
+                                        </StackPanel>
+                                    </Border>
+                                    <StackPanel Margin="0,5">
+                                        <Label Content="📦 Order Type:" FontSize="11" Foreground="Gray"/>
+                                        <TextBlock Text="{Binding CurrentOrderForCourier.OrderType}" FontSize="14" FontWeight="SemiBold" Margin="8,0"/>
+                                    </StackPanel>
+
+                                    <!--<StackPanel Margin="0,5">
+                                        <Label Content="📝 Order Requirements:" FontSize="11" Foreground="Gray"/>
+                                        <TextBlock Text="{Binding CurrentOrderForCourier.OrderRequirements}" FontSize="14" FontWeight="SemiBold" Margin="8,0" TextWrapping="Wrap"/>
+                                    </StackPanel>-->
+
+                                    <StackPanel Margin="0,5">
+                                        <Label Content="📱 Customer Phone:" FontSize="11" Foreground="Gray"/>
+                                        <TextBlock Text="{Binding CurrentOrderForCourier.CustomerPhone}" FontSize="14" FontWeight="SemiBold" Margin="8,0"/>
+                                    </StackPanel>
+
+                                    <StackPanel Margin="0,5">
+                                        <Label Content=" Air Distance:" FontSize="11" Foreground="Gray"/>
+                                        <TextBlock Text="{Binding CurrentOrderForCourier.AirDistance, StringFormat={}{0:F2} km}" FontSize="14" FontWeight="SemiBold" Margin="8,0"/>
+                                    </StackPanel>
+
+                                    <StackPanel Margin="0,5">
+                                        <Label Content="🛣️ Actual Distance:" FontSize="11" Foreground="Gray"/>
+                                        <TextBlock Text="{Binding CurrentOrderForCourier.ActualDistance, TargetNullValue='N/A', StringFormat={}{0:F2} km}" FontSize="14" FontWeight="SemiBold" Margin="8,0"/>
+                                    </StackPanel>
+
+                                    <StackPanel Margin="0,5">
+                                        <Label Content="🕒 Order Created At:" FontSize="11" Foreground="Gray"/>
+                                            <TextBlock Text="{Binding CurrentOrderForCourier.OrderCreatedTime, StringFormat={}{0:yyyy/MM/dd HH:mm}}" FontSize="14" FontWeight="SemiBold" Margin="8,0"/>
+                                        </StackPanel>
+
+                                    <StackPanel Margin="0,5">
+                                        <Label Content="⏳ Expected Delivery:" FontSize="11" Foreground="Gray"/>
+                                            <TextBlock Text="{Binding CurrentOrderForCourier.ExpectedDeliveryTime, StringFormat={}{0:yyyy/MM/dd HH:mm}}" FontSize="14" FontWeight="SemiBold" Margin="8,0" Foreground="DarkBlue"/>
+                                        </StackPanel>
+
+                                    <StackPanel Margin="0,5">
+                                        <Label Content="📊 Schedule Status:" FontSize="11" Foreground="Gray"/>
+                                        <TextBlock Text="{Binding CurrentOrderForCourier.ScheduleStatus}" FontSize="14" FontWeight="SemiBold" Margin="8,0"/>
+                                    </StackPanel>
+
+                                    <StackPanel Margin="0,5">
+                                        <Label Content="📝 Instructions:" FontSize="11" Foreground="Gray"/>
+                                        <TextBlock Text="{Binding CurrentOrderForCourier.ShortOrderDescription}" 
+                                               FontStyle="Italic" TextWrapping="Wrap" FontSize="12" Margin="8,0"/>
+                                    </StackPanel>
+
+                                    <Separator Margin="0,15"/>
+
+                                    <Label Content="🏁 Delivery Status Report:" FontWeight="SemiBold" FontSize="12"/>
+                                    <ComboBox Margin="0,5" ItemsSource="{Binding Source={StaticResource DeliveryCompletionTypesKey}}"
+                                          SelectedItem="{Binding SelectedCompletionType, Mode=TwoWay}" Height="35"/>
+
+                                        <Button Content="🏁 Finish &amp; Close Order" Style="{StaticResource SmallActionButtonStyle}" 
+                                        Click="btnFinish_Click" Margin="0,10,0,0" Height="45" Width="200" FontWeight="Bold"/>
+                                </StackPanel>
+                            </StackPanel>
+                            </ScrollViewer>
+                        </Grid>
+                    </Border>
+                   
+
+                    <Button Content="📜 View Past Deliveries" Style="{StaticResource PrimaryButtonStyle}" 
+                            Click="btnHistory_Click" HorizontalAlignment="Stretch" Height="45" Margin="10"/>
+                </StackPanel>
+            </Grid>
+        </ScrollViewer>
+    </Grid>
+</Window>

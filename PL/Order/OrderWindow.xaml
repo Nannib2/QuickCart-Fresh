@@ -1,0 +1,268 @@
+﻿<Window x:Class="PL.Order.OrderWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PL.Order"
+        xmlns:converters="clr-namespace:PL.Converters"
+        xmlns:SmartInputValidator="clr-namespace:PL"
+        mc:Ignorable="d"
+        WindowState="Maximized"
+        DataContext="{Binding RelativeSource={RelativeSource Mode=Self}}"
+        Title="{Binding ActionButtonText}" 
+        Height="850" Width="1000"
+        Loaded="Window_Loaded"
+        Closed="Window_Closed">
+
+    <Window.Resources>
+        <converters:StatusToWarningVisibilityConverter x:Key="StatusToWarningVisibilityKey"/>
+        <converters:IsEditableConverter x:Key="IsEditableConverterKey"/>
+        <converters:ActionButtonVisibilityConverter x:Key="ActionButtonVisibilityKey"/>
+    </Window.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="80"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Border Grid.Row="0" Style="{StaticResource HeaderBorderStyle}">
+            <Grid>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center">
+                    <Grid Width="45" Height="45">
+                        <Ellipse Fill="{StaticResource DangerBrush}"/>
+                        <TextBlock Text="👤" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20"/>
+                    </Grid>
+                    <StackPanel VerticalAlignment="Center" Margin="10,0,0,0">
+                        <TextBlock Text="Manager" FontWeight="Bold" FontSize="18"/>
+                        <TextBlock Text="{Binding ActionButtonText}" FontSize="12" Foreground="#666666"/>
+                    </StackPanel>
+                </StackPanel>
+
+                <TextBlock HorizontalAlignment="Center" 
+                           VerticalAlignment="Center" 
+                           Foreground="Red" 
+                           FontWeight="Bold" 
+                           FontSize="16"
+                           Visibility="{Binding CurrentOrder.OrderStatus, Converter={StaticResource StatusToWarningVisibilityKey}}">
+                    <TextBlock.Text>
+                        <MultiBinding StringFormat="Order is in {0} status - editing disabled">
+                            <Binding Path="CurrentOrder.OrderStatus"/>
+                        </MultiBinding>
+                    </TextBlock.Text>
+                </TextBlock>
+
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center">
+                    <TextBlock Text="QuickCart Fresh" VerticalAlignment="Center" FontSize="18" FontWeight="ExtraBold" Foreground="#1B5E20" Margin="0,0,15,0"/>
+                    <Button Click="btnBackMainWindow_Click" Style="{StaticResource LogoButtonStyle}" Margin="0,0,15,0">
+                        <Image Source="/Images/FinalSystemLogo.png" Height="50" VerticalAlignment="Center" RenderOptions.BitmapScalingMode="HighQuality"/>
+                    </Button>
+                </StackPanel>
+            </Grid>
+        </Border>
+
+        <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto" Padding="20">
+            <StackPanel>
+
+                <Border Style="{StaticResource CardBorderStyle}">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="2*"/> <ColumnDefinition Width="Auto"/> <ColumnDefinition Width="1*"/> </Grid.ColumnDefinitions>
+
+                        <StackPanel Grid.Column="0" Margin="0,0,20,0">
+                            <TextBlock Text="📋 Order Details:" FontSize="22" FontWeight="Bold" Foreground="#1B5E20" Margin="0,0,0,20"/>
+
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="150"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="40"/>
+                                    <ColumnDefinition Width="150"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+
+                                <Label Grid.Row="0" Grid.Column="0" Content="🔢 Order ID:"/>
+                                <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding CurrentOrder.Id, Mode=OneWay}" IsReadOnly="True" Background="#F0F0F0"/>
+
+                                <Label Grid.Row="0" Grid.Column="3" Content="🚦 Status:"/>
+                                <TextBox Grid.Row="0" Grid.Column="4" Text="{Binding CurrentOrder.OrderStatus, Mode=OneWay}" IsReadOnly="True" Background="#F0F0F0" FontWeight="Bold" Foreground="#3F51B5"/>
+
+                                <Label Grid.Row="1" Grid.Column="0" Content="👤 Customer Name:"/>
+                                <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding CurrentOrder.CustomerFullName}" >
+                                    <TextBox.IsEnabled>
+                                        <MultiBinding Converter="{StaticResource IsEditableConverterKey}">
+                                            <Binding Path="IsAddMode"/>
+                                            <Binding Path="CurrentOrder.OrderStatus"/>
+                                        </MultiBinding>
+                                    </TextBox.IsEnabled>
+                                </TextBox>
+
+                                <Label Grid.Row="1" Grid.Column="3" Content="📱 Phone:"/>
+                                <TextBox Grid.Row="1" Grid.Column="4" >
+                                    <TextBox.Text>
+                                        <Binding Path="CurrentOrder.CustomerPhone" 
+                                                UpdateSourceTrigger="PropertyChanged">
+                                            <Binding.ValidationRules>
+                                                <SmartInputValidator:SmartInputValidator Type="Integer"/>
+                                            </Binding.ValidationRules>
+                                        </Binding>
+                                    </TextBox.Text>
+                                    <TextBox.IsEnabled>
+                                        <MultiBinding Converter="{StaticResource IsEditableConverterKey}">
+                                            <Binding Path="IsAddMode"/>
+                                            <Binding Path="CurrentOrder.OrderStatus"/>
+                                        </MultiBinding>
+                                    </TextBox.IsEnabled>
+                                </TextBox>
+
+                                <Label Grid.Row="2" Grid.Column="0" Content="📍 Full Address:"/>
+                                <TextBox Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="4" Style="{StaticResource emptyTextBox}">
+
+                                    <TextBox.Text>
+                                        <Binding Path="CurrentOrder.FullAddress" UpdateSourceTrigger="PropertyChanged">
+                                            <Binding.ValidationRules>
+                                                <SmartInputValidator:SmartInputValidator Type="Address"/>
+                                            </Binding.ValidationRules>
+                                        </Binding>
+                                    </TextBox.Text>
+
+                                    <TextBox.IsEnabled>
+                                        <MultiBinding Converter="{StaticResource IsEditableConverterKey}">
+                                            <Binding Path="IsAddMode"/>
+                                            <Binding Path="CurrentOrder.OrderStatus"/>
+                                        </MultiBinding>
+                                    </TextBox.IsEnabled>
+                                </TextBox>
+
+                                <Label Grid.Row="3" Grid.Column="0" Content="📦 Order Type:"/>
+                                <ComboBox Grid.Row="3" Grid.Column="1" ItemsSource="{Binding Source={StaticResource OrderRequirementsCollectionKey}}" SelectedValue="{Binding CurrentOrder.OrderType}">
+                                    <ComboBox.IsEnabled>
+                                        <MultiBinding Converter="{StaticResource IsEditableConverterKey}">
+                                            <Binding Path="IsAddMode"/>
+                                            <Binding Path="CurrentOrder.OrderStatus"/>
+                                        </MultiBinding>
+                                    </ComboBox.IsEnabled>
+                                </ComboBox>
+
+                                <Label Grid.Row="3" Grid.Column="3" Content="🔢 Amount Items:"/>
+                                <TextBox Grid.Row="3" Grid.Column="4" >
+                                    <TextBox.IsEnabled>
+                                        <MultiBinding Converter="{StaticResource IsEditableConverterKey}">
+                                            <Binding Path="IsAddMode"/>
+                                            <Binding Path="CurrentOrder.OrderStatus"/>
+                                        </MultiBinding>
+                                    </TextBox.IsEnabled>
+                                    <TextBox.Text>
+                                        <Binding Path="CurrentOrder.AmountItems" 
+                                                 UpdateSourceTrigger="PropertyChanged">
+                                            <Binding.ValidationRules>
+                                                <SmartInputValidator:SmartInputValidator Type="Integer"/>
+                                            </Binding.ValidationRules>
+                                        </Binding>
+                                    </TextBox.Text>
+                                </TextBox>
+
+                                <Label Grid.Row="4" Grid.Column="0" Content="📝 Description:"/>
+                                <TextBox Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="4" Text="{Binding CurrentOrder.ShortOrderDescription}">
+                                    <TextBox.IsEnabled>
+                                        <MultiBinding Converter="{StaticResource IsEditableConverterKey}">
+                                            <Binding Path="IsAddMode"/>
+                                            <Binding Path="CurrentOrder.OrderStatus"/>
+                                        </MultiBinding>
+                                    </TextBox.IsEnabled>
+                                </TextBox>
+
+                                <Label Grid.Row="5" Grid.Column="0" Content="🎁 Free Shipping:"/>
+                                <CheckBox Grid.Row="5" Grid.Column="1" IsChecked="{Binding CurrentOrder.AmountItems, Mode=OneWay, Converter={StaticResource AmountToFreeShippingConverterKey}}" 
+                                          IsEnabled="False" VerticalAlignment="Center" Margin="5,15,0,5"/>
+                            </Grid>
+                        </StackPanel>
+
+                        <Border Grid.Column="1" Width="1" Background="#DDDDDD" Margin="0,10" />
+
+                        <Grid Grid.Column="2" Margin="20,0,0,0" VerticalAlignment="Top">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+
+                            <TextBlock Text="Service Types" HorizontalAlignment="Center" Foreground="#888" FontWeight="SemiBold" Margin="0,0,0,10"/>
+
+                            <Border Grid.Row="1" CornerRadius="15" BorderBrush="#EEEEEE" BorderThickness="1" Background="White">
+                                <Border.Effect>
+                                    <DropShadowEffect BlurRadius="20" ShadowDepth="5" Opacity="0.1" Color="Black"/>
+                                </Border.Effect>
+                                <Border CornerRadius="15" ClipToBounds="True">
+                                    <Image Source="/Images/orderType.png" 
+                                           Stretch="Uniform" 
+                                           RenderOptions.BitmapScalingMode="HighQuality"/>
+                                </Border>
+                            </Border>
+                        </Grid>
+                    </Grid>
+                </Border>
+
+                <Border Style="{StaticResource CardBorderStyle}"
+                        Visibility="{Binding IsAddMode, Converter={StaticResource InverseBoolToVisConverterKey}}">
+                    <StackPanel>
+                        <TextBlock Text="🚚 Delivery History" FontSize="18" FontWeight="Bold" Foreground="{StaticResource AccentBrush}" Margin="0,0,0,10"/>
+                        <DataGrid ItemsSource="{Binding CurrentOrder.DeliveryHistory}" AutoGenerateColumns="False" IsReadOnly="True" CanUserAddRows="False" Height="150" 
+                                  GridLinesVisibility="Horizontal" BorderThickness="0" Background="Transparent">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="Courier ID" Binding="{Binding CourierId}" Width="*"/>
+                                <DataGridTextColumn Header="Courier" Binding="{Binding CourierName, TargetNullValue='Scanning...'}" Width="*"/>
+                                <DataGridTextColumn Header="Delivery Type" Binding="{Binding DeliveryType}" Width="*"/>
+                                <DataGridTextColumn Header="Start Time" Binding="{Binding StartTime, StringFormat='dd/MM HH:mm'}" Width="*"/>
+                                <DataGridTextColumn Header="End Time" Binding="{Binding FinishTime, StringFormat='dd/MM HH:mm', TargetNullValue='-'}" Width="*"/>
+                                <DataGridTextColumn Header="Outcome" Binding="{Binding FinishType, TargetNullValue='In Progress'}" Width="*" FontWeight="SemiBold"/>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </StackPanel>
+                </Border>
+            </StackPanel>
+        </ScrollViewer>
+
+        <Border Grid.Row="2" Style="{StaticResource CardBorderStyle}">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+
+                <Button Content="✖ Cancel Order" Click="btnCancelOrder_Click" Width="140" Height="40" Margin="0,0,15,0" Background="#FFEBEE">
+                    <Button.Style>
+                        <Style TargetType="Button" BasedOn="{StaticResource SmallActionButtonStyle}">
+
+                            <Setter Property="Visibility" Value="{Binding CurrentOrder.OrderStatus, Converter={StaticResource StatusToCancelVisibilityConverterKey}}"/>
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding IsAddMode}" Value="True">
+                                    <Setter Property="Visibility" Value="Collapsed"/>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                </Button>
+
+                <Button Content="{Binding ActionButtonText}" 
+                    Click="btnAction_Click"
+                    Style="{StaticResource AddButtonStyle}"
+                    Width="150" Height="40">
+
+                    <Button.Visibility>
+                        <MultiBinding Converter="{StaticResource ActionButtonVisibilityKey}">
+                            <Binding Path="IsAddMode"/>
+                            <Binding Path="CurrentOrder.OrderStatus"/>
+                        </MultiBinding>
+                    </Button.Visibility>
+
+                </Button>
+
+            </StackPanel>
+        </Border>
+    </Grid>
+</Window>
